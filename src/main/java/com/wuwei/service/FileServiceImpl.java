@@ -1,9 +1,11 @@
 package com.wuwei.service;
 
+import com.wuwei.dao.UserMapper;
 import com.wuwei.entity.Result;
 import com.wuwei.entity.User;
 import com.wuwei.util.ExcelUtil;
 import com.wuwei.util.FileUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,7 +24,25 @@ import java.util.logging.Logger;
 @Service
 public class FileServiceImpl implements FileService {
 
+    @Autowired
+    private UserMapper userMapper;
     private Logger logger = Logger.getLogger(getClass().getName());
+
+    /**
+     * 查询所有用户
+     *
+     * @return
+     */
+    @Override
+    public Result findAllUser() {
+        try {
+            List<User> users = userMapper.findAllUser();
+            return Result.getSuccessResult(users);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, e.getMessage());
+        }
+        return Result.getFailedResult("查询失败！");
+    }
 
     /**
      * 下载空白的Excel文件模板
@@ -56,7 +76,7 @@ public class FileServiceImpl implements FileService {
             List<User> users = ExcelUtil.getUserList(file);
             //List<User> users = ExcelUtil.importExcel(file, 0, 1, User.class);
             for (User user : users) {
-                //TODO 保存至数据库
+                userMapper.saveUser(user);
                 System.out.println(user);
             }
             return Result.getSuccessResult("导入成功!");
@@ -73,11 +93,8 @@ public class FileServiceImpl implements FileService {
      */
     @Override
     public Result exportExcelUser(HttpServletResponse response) {
-        List<User> users = new LinkedList<>();
-        users.add(new User("Tom", "male", "Nanjing"));
-        users.add(new User("Jack", "male", "Shanghai"));
-        users.add(new User("Marry", "female", "Hangzhou"));
         try {
+            List<User> users = userMapper.findAllUser();
             ExcelUtil.exportExcel(users, User.class, "用户表.xls", response);
         } catch (IOException e) {
             logger.log(Level.SEVERE, e.getMessage());

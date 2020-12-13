@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuwei.dao.UserMapper">
+
+    <!--添加用户-->
+    <insert id="saveUser" parameterType="com.wuwei.entity.User">
+        INSERT INTO user(name, gender, address)
+        VALUES (#{name}, #{gender}, #{address});
+    </insert>
+
+    <!--查询所有用户-->
+    <select id="findAllUser" resultType="com.wuwei.entity.User">
+      SELECT * FROM user
+    </select>
+
+</mapper>

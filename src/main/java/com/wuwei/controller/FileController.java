@@ -20,6 +20,11 @@ public class FileController {
     @Autowired
     private FileService fileService;
 
+    @GetMapping("/findAllUser")
+    public Result findAllUser() {
+        return fileService.findAllUser();
+    }
+
     @GetMapping("/downloadExcelTemplate")
     public Result downloadExcelTemplate(HttpServletResponse response) {
         return fileService.downloadExcelTemplate(response);

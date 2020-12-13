@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
  * @description
  */
 public interface FileService {
+    Result findAllUser();
+
     Result downloadExcelTemplate(HttpServletResponse response);
 
     Result importExcelUser(MultipartFile file);
