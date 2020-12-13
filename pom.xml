@@ -86,6 +86,17 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.9</version>
         </dependency>
+        <!-- Swagger2构建RESTful API文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.2.2</version>
+        </dependency>
     </dependencies>
 
     <build>

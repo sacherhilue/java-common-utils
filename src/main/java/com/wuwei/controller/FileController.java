@@ -2,6 +2,8 @@ package com.wuwei.controller;
 
 import com.wuwei.entity.Result;
 import com.wuwei.service.FileService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author wuwei
  * @date 2018/7/7 10:35
  * @description 一些测试方法
+ * Swagger2: https://blog.csdn.net/winter_chen001/article/details/78330687
  */
 @RestController
 @RequestMapping("/test")
@@ -20,6 +23,7 @@ public class FileController {
     @Autowired
     private FileService fileService;
 
+    @ApiOperation(value="获取用户列表", notes="获取用户列表")
     @GetMapping("/findAllUser")
     public Result findAllUser() {
         return fileService.findAllUser();
