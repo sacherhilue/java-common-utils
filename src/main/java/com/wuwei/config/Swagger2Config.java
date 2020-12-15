@@ -15,6 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author wuwei
  * @date 2018/7/7 18:16
  * @description 参考http://blog.didispace.com/springbootswagger2/
+ * RESTful API在线文档访问地址：http://localhost:8080/app/swagger-ui.html
  */
 @Configuration
 @EnableSwagger2
