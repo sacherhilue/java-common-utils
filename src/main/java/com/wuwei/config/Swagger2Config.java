@@ -14,8 +14,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @author wuwei
  * @date 2018/7/7 18:16
- * @description 参考http://blog.didispace.com/springbootswagger2/
- * RESTful API在线文档访问地址：http://localhost:8080/app/swagger-ui.html
+ * @description 参考如下：
+ * 1) Spring Boot中使用Swagger2构建强大的RESTful API文档
+ * http://blog.didispace.com/springbootswagger2/
+ * 2) 使用Swagger2Markup实现API文档的静态部署
+ * http://blog.didispace.com/swagger2markup-asciidoc/
+ * 在线文档访问地址：http://localhost:8080/test/swagger-ui.html
  */
 @Configuration
 @EnableSwagger2

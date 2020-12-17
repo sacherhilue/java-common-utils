@@ -13,12 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author wuwei
  * @date 2018/7/7 10:35
- * @description 一些测试方法
- * 生成离线文档：http://www.leftso.com/blog/402.html
+ * @description 一些测试接口
  */
 @Api(value = "文件操作controller", tags = {"文件操作接口"})
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/file")
 public class FileController {
 
     @Autowired
