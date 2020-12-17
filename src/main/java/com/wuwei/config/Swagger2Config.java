@@ -14,12 +14,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @author wuwei
  * @date 2018/7/7 18:16
- * @description 参考如下：
+ * @description
  * 1) Spring Boot中使用Swagger2构建强大的RESTful API文档
- * http://blog.didispace.com/springbootswagger2/
- * 2) 使用Swagger2Markup实现API文档的静态部署
- * http://blog.didispace.com/swagger2markup-asciidoc/
+ * 参考： http://blog.didispace.com/springbootswagger2/
  * 在线文档访问地址：http://localhost:8080/test/swagger-ui.html
+ *
+ * 2) 使用Swagger2Markup实现API文档的静态部署
+ * 执行命令：
+ * 1.mvn test
+ * 2.mvn asciidoctor:process-asciidoc
+ * 参考：http://blog.didispace.com/swagger2markup-asciidoc/
  */
 @Configuration
 @EnableSwagger2
