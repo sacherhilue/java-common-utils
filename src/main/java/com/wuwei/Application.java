@@ -1,6 +1,5 @@
 package com.wuwei;
 
-import com.spring4all.swagger.EnableSwagger2Doc;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +16,6 @@ import java.net.UnknownHostException;
  * @date 2018/7/7 10:40
  * @description
  */
-@EnableSwagger2Doc
 @SpringBootApplication
 @MapperScan("com.wuwei.dao")
 public class Application {
