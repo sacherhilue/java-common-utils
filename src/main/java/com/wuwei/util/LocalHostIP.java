@@ -1,4 +1,4 @@
-package com.chinaoly.test;
+package com.wuwei.util;
 
 import java.net.*;
 import java.util.Enumeration;
